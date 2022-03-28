@@ -28,9 +28,6 @@ spec:
         args:
           - -File
           - /gmsa-demo/run.ps1
-        volumeMounts:
-          - name: gmsa-demo
-            mountPath: /gmsa-demo
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
