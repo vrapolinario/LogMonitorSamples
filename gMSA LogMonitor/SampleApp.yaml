@@ -23,11 +23,6 @@ spec:
       - name: iis
         image: <your image>
         imagePullPolicy: IfNotPresent
-        command:
-          - powershell
-        args:
-          - -File
-          - /gmsa-demo/run.ps1
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
