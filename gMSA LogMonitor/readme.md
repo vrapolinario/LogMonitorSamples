@@ -12,7 +12,7 @@ This files is used to specify what Log Monitor should monitor. It specifies the 
 
 ## SampleApp.yaml
 
-This is the file useed to deploy your app into Kubernetes. There's one change needed for your environment. You need to change the [image](https://github.com/vrapolinario/LogMonitorSamples/blob/9e4f3b48fa5c4f9d87786c772db2436300d3acd0/gMSA%20LogMonitor/SampleApp.yaml#L24) to your final image registry.
+This is the file used to deploy your app into Kubernetes. There's one change needed for your environment. You need to change the [image](https://github.com/vrapolinario/LogMonitorSamples/blob/9e4f3b48fa5c4f9d87786c772db2436300d3acd0/gMSA%20LogMonitor/SampleApp.yaml#L24) to your final image registry.
 
 ## default.aspx
 
