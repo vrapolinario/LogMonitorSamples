@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iismonitor-demo
+  labels:
+    app: iismonitor-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: iismonitor-demo
+      labels:
+        app: iismonitor-demo
+    spec:
+      nodeSelector:
+        "kubernetes.azure.com/os-sku": Windows2022
+      containers:
+      - name: iismonitor-demo
+        image: lmiisviniap.azurecr.io/iismonitorimage:v1
+        resources:
+          limits:
+            cpu: 1
+            memory: 800M
+          requests:
+            cpu: .5
+            memory: 400M
+        ports:
+          - containerPort: 80
+  selector:
+    matchLabels:
+      app: iismonitor-demo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iismonitor-demo
+spec:
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+  selector:
+    app: iismonitor-demo
